@@ -18,6 +18,10 @@ public class BSTmain {
         }
 
         binarySearchTree.getSize();
+        System.out.println("Enter data to search");
+        int searchData = scanner.nextInt();
+        binarySearchTree.searchElement(searchData);
     }
-}
+    }
+
 
