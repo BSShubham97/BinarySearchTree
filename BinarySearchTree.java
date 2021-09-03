@@ -36,4 +36,26 @@ public class BinarySearchTree<T extends Comparable<T>>{
 
         return size;
     }
+
+    /**
+     * Search Method
+     * @param data Data to be search if present 
+     */
+    public void searchElement(T data) {
+        BiNode<T> currentNode = this.searchRecursively(root, data);
+        System.out.println(currentNode.data + " FOUND");
+    }
+
+    private BiNode<T> searchRecursively(BiNode<T> currentNode, T data) {
+        if (currentNode == null )
+            return currentNode;
+
+        if (data.compareTo(currentNode.data) < 0)
+            return searchRecursively(currentNode.left, data);
+
+        if (data.compareTo(currentNode.data) > 0)
+            return searchRecursively(currentNode.right, data);
+
+        return currentNode;
+    }
 }
